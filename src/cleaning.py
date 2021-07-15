@@ -27,3 +27,13 @@ def cleaning_co2_data(df):
     return df
 
 
+def cleaning_temp_data(df):
+    # como todos los datos de este csv estan en el indice lo que tengo que haces es resetear el indice para que cada una
+    # de las columnas del indice se convierta en una columna de verdad. 
+    # una vez que tengo esto hecho,le pongo nombre a las columnas. 
+    df.reset_index(inplace=True)
+    columns = ["Year", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec", "J-D", "D-N", "DJF", "MAM", "JJA", "SON"]
+    df.columns = columns
+    df = df.iloc[1:]
+    return df
+
