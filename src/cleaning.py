@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 def cleaning_co2_data(df):
 
@@ -37,3 +38,29 @@ def cleaning_temp_data(df):
     df = df.iloc[1:]
     return df
 
+def merge_data(df, new_df):
+    d = df.T
+    d = d.iloc[1:]
+    
+    lst = []
+    for i in range(1,141):
+        lst.append(d[i].tolist())
+    lst2 = []
+    for i in lst:
+        for n in i:
+            lst2.append(n)
+            
+    new_df["Avg_anomalies"] = pd.DataFrame({'col':lst2})
+    # En times series la fecha debe estar como indice
+    new_df.set_index("date", inplace = True)
+    new_df.tail()
+    return new_df
+
+
+def clean_anomaly_value(raw_value):
+    # Define function to convert values to floats, and return a 'NaN = Not a Number' if this is not possible
+
+    try:
+        return float(raw_value)
+    except:
+        return np.NaN
