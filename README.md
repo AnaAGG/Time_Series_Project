@@ -19,6 +19,9 @@ According to the IPCC, the extent of climate change effects on individual region
 
 The IPCC predicts that increases in global mean temperature of less than 1.8 to 5.4 degrees Fahrenheit (1 to 3 degrees Celsius) above 1990 levels will produce beneficial impacts in some regions and harmful ones in others. Net annual costs will increase over time as global temperatures increase.
 
+On the other hand, at the dawn of the industrial revolution, the Earth’s atmosphere contained 278 parts of CO₂ per million. Today, after more than two and a half centuries of fossil fuel use, that figure is around 414 parts per million (ppm). If the build-up of CO₂ continues at current rates, by 2060 it will have passed 560 ppm – more than double the level of pre-industrial times.
+
+Exactly how the climate will respond to all this extra CO₂ is one of the central questions in climate science. Just how much will the climate actually change?
 
 > The aim of this project is to make predictions of the evolution of temperature and CO2 emissions through Time Series Analysis using *Prophet* python library.
 
