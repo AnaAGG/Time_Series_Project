@@ -15,8 +15,12 @@ Global climate change has already had observable effects on the environment. Gla
 
 Effects that scientists had predicted in the past would result from global climate change are now occurring: loss of sea ice, accelerated sea level rise and longer, more intense heat waves.
 
+According to the IPCC, the extent of climate change effects on individual regions will vary over time and with the ability of different societal and environmental systems to mitigate or adapt to change.
 
-> The aim of this project is to make predictions of the evolution of temperature and CO2 emissions using Time Series.
+The IPCC predicts that increases in global mean temperature of less than 1.8 to 5.4 degrees Fahrenheit (1 to 3 degrees Celsius) above 1990 levels will produce beneficial impacts in some regions and harmful ones in others. Net annual costs will increase over time as global temperatures increase.
+
+
+> The aim of this project is to make predictions of the evolution of temperature and CO2 emissions through Time Series Analysis using *Prophet* python library.
 
 ## **Time Series Components**
 
