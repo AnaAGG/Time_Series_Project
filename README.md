@@ -3,27 +3,30 @@ The aim of this project is to make predictions of the evolution of temperature a
 
 
 
-**Time Series Components**
+## **Time Series Components**
 
 
 
-- Autocorrelation
+- **Autocorrelation**
+
+    Autocorrelation is the similarity between observations as a function of the time lag between them. 
 
 <img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Correlation.png">
 
-- Seasonality — Seasonality is a repeating pattern within a fixed period like the example above, about the sales revenue in the holiday season.
+- **Seasonality**
+
+    Seasonality is a repeating pattern within a fixed period. Refers to periodic fluctuations. For example, electricity consumption is high during the day and low during night, or high temperatures in summer and lower in winter.
 
 <img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Seasonality.png">
 
-- Irregularity– It is also known as noise, so these are erratic, or you can say unsystematic. This happens only for a short duration, and it is non-repeating. It is a random part of the data. There is no specific pattern, which makes it difficult to be factored into an analysis.
+- **Stationarity**
 
-<img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Stationarity.png" align="center">
+    Stationarity is an important characteristic of time series. A time series is said to be stationary if its statistical properties do not change over time. In other words, it has constant mean and variance, and covariance is independent of time.
 
-
-<div style="text-align: center"><img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Stationarity.png" /></div>
-
+<img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Stationarity.png">
 
 
 # Links
 
 - Time Series Components https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775   
+
