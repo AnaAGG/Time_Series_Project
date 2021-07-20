@@ -1,6 +1,9 @@
 # Time_Series_Project
 ![portada](https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/main.jpeg)
 
+
+<img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/main.jpeg" width="200" height="200" />
+
 The aim of this project is to make predictions of the evolution of temperature and CO2 emissions using Time Series. 
 
 ## The problem
