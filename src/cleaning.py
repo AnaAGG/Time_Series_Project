@@ -52,6 +52,8 @@ def merge_data(df, new_df):
             
     new_df["Avg_anomalies"] = pd.DataFrame({'col':lst2})
     # En times series la fecha debe estar como indice
+    new_df['Datetimes'] = pd.to_datetime(new_df['date'])
+    new_df.drop("Datetimes", axis = 1, inplace = True)
     new_df.set_index("date", inplace = True)
     new_df.tail()
     return new_df
