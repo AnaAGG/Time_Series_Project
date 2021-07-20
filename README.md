@@ -21,11 +21,19 @@ The IPCC predicts that increases in global mean temperature of less than 1.8 to 
 
 On the other hand, at the dawn of the industrial revolution, the Earth’s atmosphere contained 278 parts of CO₂ per million. Today, after more than two and a half centuries of fossil fuel use, that figure is around 414 parts per million (ppm). If the build-up of CO₂ continues at current rates, by 2060 it will have passed 560 ppm – more than double the level of pre-industrial times.
 
-Exactly how the climate will respond to all this extra CO₂ is one of the central questions in climate science. Just how much will the climate actually change?
+Exactly how the climate will respond to all this extra CO₂ is one of the central questions in climate science. 
 
-> The aim of this project is to make predictions of the evolution of temperature and CO2 emissions through Time Series Analysis using *Prophet* python library.
+> The aim of this project is to make predictions of the evolution of temperature and CO2 emissions through **Time Series Analysis using *Prophet* python library**.
 
-## **Time Series Components**
+
+
+## What is Time Series Analysis?
+
+A time series is simply a series of data points ordered in time. In a time series, time is often the independent variable and the goal is usually to make a forecast for the future.
+
+In Time Series, we have only 2 variables, time & the variable we want to forecast. E.g. height of ocean tides, count of sunspots, regular changing of seasons every year, glowing of rice light, motion of pendulum in vacuum. Etc. etc. any event occurring at equal interval and contains time as a variable.
+
+### **Time Series Components**
 
 
 
@@ -51,4 +59,6 @@ Exactly how the climate will respond to all this extra CO₂ is one of the centr
 # Links
 
 - Time Series Components https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775   
+- An introduction to Time-Series Analysis https://medium.com/analytics-vidhya/an-introduction-to-time-series-analysis-2a12d3702299
+- 
 
