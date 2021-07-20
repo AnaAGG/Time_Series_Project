@@ -20,6 +20,9 @@ The aim of this project is to make predictions of the evolution of temperature a
 <img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Stationarity.png" align="center">
 
 
+<div style="text-align: center"><img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/Stationarity.png" /></div>
+
+
 
 # Links
 
