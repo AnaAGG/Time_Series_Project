@@ -4,13 +4,19 @@
  <img src="https://github.com/AnaAGG/Time_Series_Project/blob/main/Images/main.jpeg" width="800" height="300" >
 </p>
 
-The aim of this project is to make predictions of the evolution of temperature and CO2 emissions using Time Series. 
+    Taken as a whole, the range of published evidence indicates that the net damage costs of climate change are likely to be significant and to increase over time.
 
-## The problem
+    Intergovernmental Panel on Climate Change
+ 
+
+## The problem and objective
 
 Global climate change has already had observable effects on the environment. Glaciers have shrunk, ice on rivers and lakes is breaking up earlier, plant and animal ranges have shifted and trees are flowering sooner.
 
 Effects that scientists had predicted in the past would result from global climate change are now occurring: loss of sea ice, accelerated sea level rise and longer, more intense heat waves.
+
+
+> The aim of this project is to make predictions of the evolution of temperature and CO2 emissions using Time Series.
 
 ## **Time Series Components**
 
