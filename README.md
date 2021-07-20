@@ -1,7 +1,11 @@
 # Time_Series_Project
 The aim of this project is to make predictions of the evolution of temperature and CO2 emissions using Time Series. 
 
+## The problem
 
+Global climate change has already had observable effects on the environment. Glaciers have shrunk, ice on rivers and lakes is breaking up earlier, plant and animal ranges have shifted and trees are flowering sooner.
+
+Effects that scientists had predicted in the past would result from global climate change are now occurring: loss of sea ice, accelerated sea level rise and longer, more intense heat waves.
 
 ## **Time Series Components**
 
