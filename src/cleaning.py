@@ -2,15 +2,25 @@ import pandas as pd
 import numpy as np
 
 def cleaning_co2_data(df):
+    """
+    This function clean the co2 dataframe
+    Args:
+        df (dataframe): the complete CO2 information before cleaning
 
-    # lo primero que hago es establecer la fila 3 como las columnas de mi data frame
+    Returns:
+        df (dataframe): the complete CO2 information after cleaning
+    """
+
+    # Setting the column names to the 4th row of the dataframe.
     columns = df.iloc[3]
     df.columns = columns
     
-    #como las primeras 4 filas no me interesan, las elimino
+
+    # Removing the first 4 rows of the dataframe.
     df = df.iloc[4:]
 
-    #cambio el nombre de algunas columnas
+
+    # Setting the column names to the 4th row of the dataframe.
     columns2 = ['Country Name', 'Country Code', 'Indicator Name', 'Indicator Code',
        '1960', '1961', '1962', '1963', '1964', '1965', '1966',
        '1967', '1968', '1969', '1970', '1971', '1972', '1973',
@@ -23,7 +33,7 @@ def cleaning_co2_data(df):
        '2016', '2017', '2018', 'N']
     df.columns  = columns2
 
-    # por ultimo elimino algunas columnas que no me interesan
+    # Dropping the columns N, 2015, 2016, 2017, 2018 from the dataframe.
     df = df.drop(["N", "2015", "2016", "2017", "2018"], axis = 1)
     return df
 
