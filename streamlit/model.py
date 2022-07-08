@@ -7,6 +7,7 @@ from fbprophet.diagnostics import cross_validation
 from fbprophet.plot import plot_cross_validation_metric
 
 import plotly.express as px
+import pickle
 
 
 
@@ -61,25 +62,10 @@ def app():
 
         df_p = performance_metrics(df_cv2)
 
-        
-
-        def create_plot(df_, column):
-            df_ = round(df_, 3)
-            df_["horizon"] = df_["horizon"].astype(str)
-            fig = px.bar(df_, x = "horizon", y = f"{column}",color = "horizon" , template='plotly_white', text='mse', color_discrete_sequence=px.colors.qualitative.Prism)
-            fig.update_traces(textfont_size=12, textangle=0, textposition="outside", cliponaxis=False, marker_line_width=1.5, opacity=1, showlegend=False)
-
-            return fig
-
-
-        col1, col2 = st.columns(2)
-        with col1:
-            st.plotly_chart(create_plot(df_p, "mse"))
-            
-        with col2:
-            st.plotly_chart(create_plot(df_p, "rmse"))
-
-        
+        with open('prophet_model.pkl', "wb") as f:
+            # dump information to that file
+            pickle.dump(obj, f)
+       
 
 
 

@@ -1,12 +1,14 @@
 import home
 import model
+import evaluation
 import streamlit as st
 from PIL import Image
 
 # A dictionary that maps the name of the page to the page itself.
 PAGES = {
     "Home": home,
-    "Model prediction": model
+    "Model Prediction": model, 
+    "Model Evaluation": evaluation
 }
 st.set_page_config(layout="wide")
 
