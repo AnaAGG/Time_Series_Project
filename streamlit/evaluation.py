@@ -26,8 +26,51 @@ def app():
     
     - **Mean Absolute Error (MAE)**: Measures the average absolute error. This metric can be interpreted as the absolute average distance between the best possible fit and the forecast.
      """)
+     if st.button("Show metric formulas"):
+            st.write("hola")
+
+            st.latex(r"""
+              RMSE = \sqrt{\frac{1}{n}\Sigma_{i=1}^{n}{\Big(\frac{d_i -f_i}{\sigma_i}\Big)^2}}
+            """)
+
+            st.latex(r"""
+             MSE = {\frac{1}{n}\Sigma_{i=1}^{n}{\Big(\frac{d_i -f_i}{\sigma_i}\Big)}}
+            """)
+
+            st.latex(r"""
+                MAE = (\frac{1}{n})\sum_{i=1}^{n}\left | y_{i} - x_{i} \right |
+
+            """)
+
+    with st.expander("How to evaluate my model?"):
+        st.write("""
+        The following table and plots allow you to evaluate model performance. Go to the Evaluation section of the sidebar if you wish to customize evaluation settings by:
+
+        - Adding more metrics
+
+        - Changing evaluation period
+        
+        - Computing performance at a different granularity to understand on which periods performance drops
+        """)
 
 
+    col5, col6, col7, col8 = st.columns(4)
+    with col5:
+        original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MSE</p>'
+        st.markdown(original_title, unsafe_allow_html=True)
+        st.markdown("hola")
+    with col6:
+        original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">RMSE</p>'
+        st.markdown(original_title, unsafe_allow_html=True)
+    with col7:
+        original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MAE</p>'
+        st.markdown(original_title, unsafe_allow_html=True)
+    with col8:
+        original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MDAPE</p>'
+        st.markdown(original_title, unsafe_allow_html=True)
+      
+
+    
     with open('prophet_model.pkl', "rb") as f:
         obj = pickle.load(f)
 
