@@ -16,6 +16,7 @@ def app():
 
 
     st.write("SELECT FORECAST PERIOD") #text displayed
+    max_date = df['ds'].max() #compute latest date in the data 
 
     periods_input = st.number_input('How many days forecast do you want?', min_value = 15, max_value = 365)
 
@@ -30,7 +31,17 @@ def app():
     fcst = obj.predict(future)  #make prediction for the extended data
     forecast = fcst[['ds', 'yhat', 'yhat_lower', 'yhat_upper']]
 
-    st.table(forecast.tail(periods_input))
+    #Choose only the forecasted records (having date after the latest date in #original data)
+    forecast_filtered =  forecast[forecast['ds'] > max_date]    
+    st.write(forecast_filtered)  #Display some forecasted records
+    st.write("The next visual shows the actual (black dots) and predicted (blue line) values over time.")    
+    figure1 = obj.plot(fcst) #plot the actual and predicted values
+    st.write(figure1)  #display the plot
+
+    #Plot the trends using Prophet.plot_components()
+    st.write("The following plots show a high level trend of predicted values, day of week trends and yearly trends (if dataset contains multiple years’ data).Blue shaded area represents upper and lower  confidence intervals.")
+    figure2 = obj.plot_components(fcst) 
+    st.write(figure2) 
 
 
 
