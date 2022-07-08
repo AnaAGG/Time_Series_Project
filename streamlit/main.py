@@ -8,6 +8,7 @@ PAGES = {
     "Home": home,
     "Model prediction": model
 }
+st.set_page_config(layout="wide")
 
 st.sidebar.image("images/portada.png", use_column_width=True)
 
