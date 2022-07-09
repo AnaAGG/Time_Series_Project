@@ -11,6 +11,18 @@ import pandas as pd
 
 def app():
 
+    with open('prophet_model.pkl', "rb") as f:
+        obj = pickle.load(f)
+
+
+    cutoffs = pd.to_datetime(['1918-09-3', '1958-09-3', '2018-09-3'])
+
+    df_cv2 = cross_validation(obj, cutoffs=cutoffs, horizon='365 days')
+
+    df_p = performance_metrics(df_cv2)
+
+    st.markdown("# General Model Information")
+
     with st.expander("More info on evaluation metrics"):
      st.write("""
          
@@ -58,28 +70,25 @@ def app():
     with col5:
         original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MSE</p>'
         st.markdown(original_title, unsafe_allow_html=True)
-        st.markdown("hola")
+        st.markdown(round(df_p["mse"].mean(), 2))
     with col6:
         original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">RMSE</p>'
         st.markdown(original_title, unsafe_allow_html=True)
+        st.markdown(round(df_p["rmse"].mean(),2))
     with col7:
         original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MAE</p>'
         st.markdown(original_title, unsafe_allow_html=True)
+        st.markdown(round(df_p["mae"].mean(),2))
+
     with col8:
         original_title = '<p style="font-weight:bold; color:#FF0066; font-size: 20px;">MDAPE</p>'
         st.markdown(original_title, unsafe_allow_html=True)
+        st.markdown(round(df_p["mdape"].mean(),2))
+
       
 
     
-    with open('prophet_model.pkl', "rb") as f:
-        obj = pickle.load(f)
-
-
-    cutoffs = pd.to_datetime(['1918-09-3', '1958-09-3', '2018-09-3'])
-
-    df_cv2 = cross_validation(obj, cutoffs=cutoffs, horizon='365 days')
-
-    df_p = performance_metrics(df_cv2)
+    
 
     def create_plot(df_, column):
                 df_ = round(df_, 3)
