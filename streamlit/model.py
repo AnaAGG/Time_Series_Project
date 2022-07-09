@@ -10,7 +10,6 @@ import plotly.express as px
 import pickle
 
 
-
 def app():
     st.title('APP2')
     st.write('Welcome to app2')
