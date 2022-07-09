@@ -34,7 +34,7 @@ def cleaning_co2_data(df):
     df.columns  = columns2
 
     # Dropping the columns N, 2015, 2016, 2017, 2018 from the dataframe.
-    df = df.drop(["N", "2015", "2016", "2017", "2018"], axis = 1)
+    df = df.drop(["N", "2015", "2016", "2017", "2018", "Indicator Name", "Indicator Code"], axis = 1)
     return df
 
 
