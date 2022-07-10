@@ -56,7 +56,7 @@ def app():
     def pie_chart_genus():
         
 
-        fig = px.line(df, x='date', y = "Avg_anomalies", title = "Evolution of temperature over time", color_discrete_sequence=["#FF0066"])
+        fig = px.line(df, x='date', y = "Avg_anomalies", title = "Evolution of temperature over time", color_discrete_sequence=["#FF0066"]  )
         
 
         return fig
@@ -82,4 +82,22 @@ def app():
         st.plotly_chart(px.line((full[full["Area"] == pais ].groupby("Year").mean()).reset_index(), x = "Year", y = "Values", color_discrete_sequence=["#FF0066"] ))
 
 
-    
+    import json
+
+    df_ordenado_limpio = pd.read_csv("../Data/temp_world_clean.csv")
+
+    with open('../Data/countries.geojson') as response:
+        counties = json.load(response)
+
+    target_states = list(df_ordenado_limpio.Area.unique())
+
+
+    st.plotly_chart(px.choropleth_mapbox(df_ordenado_limpio, locations='Area', geojson = counties 
+    , color='Values',
+                            color_continuous_scale="Viridis",
+                            range_color=(0, 2),featureidkey="properties.ADMIN",
+                            mapbox_style="carto-positron",
+                            zoom=0.1, center = {"lat": 37.0902, "lon": -95.7129},
+                            opacity=0.5,
+                            labels={'Values':'temperature'}
+                            ))
