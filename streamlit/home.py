@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import json
+
 
 def app():
 
     # Creating a title for the page
     st.title('Home')
-    st.write('Welcome to the temperature prediction app')
-
+    st.image("images/main.jpeg", use_column_width= True)
     st.write(""" 
 
     # The problem and objective
@@ -61,10 +62,10 @@ def app():
 
         return fig
 
-    st.plotly_chart(pie_chart_genus())
+    st.plotly_chart(pie_chart_genus(), use_container_width= True)
 
 
-    st.write("Information around the world")
+    st.markdown("# Information around the world")
     full = pd.read_csv("../Data/temp_world_clean.csv", index_col = 0)
 
     full = full[full["Element"] == "Temperature change"]
@@ -72,17 +73,6 @@ def app():
 
     st.table(full.head())
 
-    paises = list(full["Area"].unique())
-
-    pais = st.selectbox("Elige un pais",["Choose a country"] + paises)
-
-    if pais == "Choose a country":
-        st.write("Please enter a country")
-    else: 
-        st.plotly_chart(px.line((full[full["Area"] == pais ].groupby("Year").mean()).reset_index(), x = "Year", y = "Values", color_discrete_sequence=["#FF0066"] ))
-
-
-    import json
 
     df_ordenado_limpio = pd.read_csv("../Data/temp_world_clean.csv")
 
@@ -100,4 +90,17 @@ def app():
                             zoom=0.1, center = {"lat": 37.0902, "lon": -95.7129},
                             opacity=0.5,
                             labels={'Values':'temperature'}
-                            ))
+                            ), use_container_width= True)
+
+    paises = list(full["Area"].unique())
+
+    pais = st.selectbox("Elige un pais",["Choose a country"] + paises)
+
+    if pais == "Choose a country":
+        st.write("Please enter a country")
+    else: 
+        st.plotly_chart(px.line((full[full["Area"] == pais ].groupby("Year").mean()).reset_index(), 
+        x = "Year", y = "Values", color_discrete_sequence=["#FF0066"] ), use_container_width= True)
+
+
+
