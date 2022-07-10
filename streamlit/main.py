@@ -12,10 +12,22 @@ PAGES = {
 }
 st.set_page_config(layout="wide")
 
-st.sidebar.image("images/portada.png", use_column_width=True)
+with st.sidebar.expander("Objetive"):
+    st.write("""
+    The aim of this project is to use different tools to find the best approach for predicting global temperature change.
+    """)
+with st.sidebar.expander("Page description"):
+    st.write("""
+    - **Home**: You can find a descriptive analysis of the data used for the model. 
 
+        You will also find more detailed information by country and year of the temperature increases.
+
+    - **Prophet Model**: The Prophet model, as well as its main results and conclusions.
+
+
+    - **LSTM Model**: The LSTM model
+    """)
 # Creating a title for the sidebar.
-st.sidebar.title('Navigation')
 
 # Creating a radio button in the sidebar that allows the user to select which page they want to go to.
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))

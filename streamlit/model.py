@@ -154,7 +154,7 @@ def app():
 
                 If we explore the years and months a bit, we see that our model is not able to capture the changes in temperature changes well. This makes our model with Prophet not the best suited to capture the patterns. 
 
-                For this reason, I decided to make another approach using PyCaret. 
+                For this reason, I decided to make another approach using LSTM. 
                                     
                 """)
 
