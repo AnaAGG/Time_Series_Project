@@ -20,6 +20,7 @@ st.sidebar.title('Navigation')
 # Creating a radio button in the sidebar that allows the user to select which page they want to go to.
 selection = st.sidebar.radio("Go to", list(PAGES.keys()))
 
+
 # Assigning the value of the key `selection` to the variable `page`.
 page = PAGES[selection]
 

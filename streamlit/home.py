@@ -56,7 +56,7 @@ def app():
     def pie_chart_genus():
         
 
-        fig = px.line(df, x='date', y = "Avg_anomalies", title = "Evolution of temperature over time")
+        fig = px.line(df, x='date', y = "Avg_anomalies", title = "Evolution of temperature over time", color_discrete_sequence=["#FF0066"])
         
 
         return fig
@@ -79,8 +79,7 @@ def app():
     if pais == "Choose a country":
         st.write("Please enter a country")
     else: 
-        st.plotly_chart(px.line((full[full["Area"] == pais ].groupby("Year").mean()).reset_index(), x = "Year", y = "Values"))
-
+        st.plotly_chart(px.line((full[full["Area"] == pais ].groupby("Year").mean()).reset_index(), x = "Year", y = "Values", color_discrete_sequence=["#FF0066"] ))
 
 
     
