@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 import json
-
+import support as sp
 
 def app():
 
@@ -49,20 +49,7 @@ def app():
         st.table(df.tail(10))
 
 
-    # Display a static table
-    
-
-    
-
-    def pie_chart_genus():
-        
-
-        fig = px.line(df, x='date', y = "Avg_anomalies", title = "Evolution of temperature over time", color_discrete_sequence=["#FF0066"]  )
-        
-
-        return fig
-
-    st.plotly_chart(pie_chart_genus(), use_container_width= True)
+    st.plotly_chart(sp.pie_chart_genus(df), use_container_width= True)
 
 
     st.markdown("# Information around the world")

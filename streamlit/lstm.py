@@ -65,6 +65,8 @@ def app():
     trainScore = math.sqrt(mean_squared_error(trainY[0], trainPredict[:,0]))
     testScore = math.sqrt(mean_squared_error(testY[0], testPredict[:,0]))
 
+    st.write(trainScore)
+
     # shift train predictions for plotting
     trainPredictPlot = np.empty_like(dataset)
     trainPredictPlot[:, :] = np.nan
