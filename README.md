@@ -58,7 +58,7 @@ In Time Series, we have only 2 variables, time & the variable we want to forecas
 
 # Links
 
-- [Time Series](Components https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775)
+- [Time Series Components](https://towardsdatascience.com/the-complete-guide-to-time-series-analysis-and-forecasting-70d476bfe775)
 - [An introduction to Time-Series Analysis](https://medium.com/analytics-vidhya/an-introduction-to-time-series-analysis-2a12d3702299)
 
 
